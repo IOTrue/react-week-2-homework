@@ -3,15 +3,15 @@ const ADD_TODO = "ADD_TODO"
 const DELETE_TODO = "DELETE_TODO"
 const DONE_TODO = "DONE_TODO"
 
-const nextId = Date.now()
-let idCount = 2
+const defaultId = Date.now()
+let idCount = 2 //defaultID를 사용하는 initialState의 id 값과 겹는 일이 발생하지 않도록 기본값을 2로 설정
 
 // Action Creator
 export const addTodo = (todo)=>{ //리스트 추가
     return{
         type: ADD_TODO,
         todo: {
-            id: nextId + idCount++,
+            id: Date.now() + idCount++,
             title: todo.title,
             desc: todo.desc,
             isDone: todo.isDone,
@@ -36,8 +36,8 @@ export const doneTodo = (todoId)=>{ //리스트 완료
 // Initial State
 const initialState = {
     todos : [
-        {id:nextId, title:'리액트 리덕스', desc:'리액트 리덕스 공부하기!',isDone:false},
-        {id:nextId + 1, title:'리액트', desc:'리액트 공부하기!',isDone:true}
+        {id:defaultId, title:'리액트 리덕스', desc:'리액트 리덕스 공부하기!',isDone:false},
+        {id:defaultId + 1, title:'리액트', desc:'리액트 공부하기!',isDone:true}
     ]
     };
 

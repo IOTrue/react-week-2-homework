@@ -1,14 +1,14 @@
-componenets
-    -TodoCard
-pages
-    -Detail
-    -Home
-redux
++componenets
+    +TodoCard
++pages
+    +Detail
+    +Home
++redux
     config
-        -configStore
+        +configStore
     modules
-        -todo
-shared
-    -Layout
-    -Router
-App.js
+        +todo
++shared
+    +Layout
+    +Router
++App.js

@@ -1,0 +1,26 @@
+/* 상세보기 */
+.link{
+  text-decoration: none;
+  color: #f44408;
+}
+.link:hover{
+  color: darkgreen;
+}
+
+/* 이전으로 */
+.prevLink{
+  display: inline-block;
+  padding: 12px 25px;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.prevLink:hover{
+  background: #d2d2d2;
+  font-weight: bold;
+}

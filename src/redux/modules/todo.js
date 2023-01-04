@@ -1,7 +1,7 @@
 // Action Value
-const ADD_TODO = "ADD_TODO"
-const DELETE_TODO = "DELETE_TODO"
-const DONE_TODO = "DONE_TODO"
+const ADD_TODO = "todos/ADD_TODO"
+const DELETE_TODO = "todos/DELETE_TODO"
+const DONE_TODO = "todos/DONE_TODO"
 
 const defaultId = Date.now()
 let idCount = 2 //defaultID를 사용하는 initialState의 id 값과 겹는 일이 발생하지 않도록 기본값을 2로 설정

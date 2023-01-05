@@ -2,6 +2,7 @@
 const ADD_TODO = "todos/ADD_TODO"
 const DELETE_TODO = "todos/DELETE_TODO"
 const DONE_TODO = "todos/DONE_TODO"
+const GET_DETAIL_TODO = "todos/GET_DETAIL_TODO"
 
 const defaultId = Date.now()
 let idCount = 2 //defaultID를 사용하는 initialState의 id 값과 겹는 일이 발생하지 않도록 기본값을 2로 설정
@@ -31,13 +32,19 @@ export const doneTodo = (todoId)=>{ //리스트 완료
         todoId: todoId
     }
 }
+export const getDetailTodo = (todoId)=>{ //상세페이지
+    return{
+        type: GET_DETAIL_TODO,
+        todoId: todoId
+    }
+}
 
 
 // Initial State
 const initialState = {
     todos : [
         {id:defaultId, title:'리액트 리덕스', desc:'리액트 리덕스 공부하기!',isDone:false},
-        {id:defaultId + 1, title:'리액트', desc:'리액트 공부하기!',isDone:true}
+        {id:defaultId + 1, title:'redux-persist', desc:'redux-persist로 스토리지 저장하기',isDone:true}
     ]
     };
 
@@ -60,6 +67,11 @@ const todos = (state = initialState, action) => {
                     : todo
                 )
             }
+        case GET_DETAIL_TODO:
+            return{
+                ...state,
+                todoDetail : state.todos.find((todo) => todo.id === action.todoId)
+            }    
         default:
         return state;
     }

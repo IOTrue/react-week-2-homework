@@ -1,14 +1,17 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getDetailTodo } from '../redux/modules/todo';
 import styled from "styled-components";
 
 
 const Detail = () => {
     const param = useParams()
-    const todos = useSelector((state) => state.todos.todos) //todo list 가져오기
-    const todoDetail = todos.find((todo) => todo.id === parseInt(param.id)) //파라메터 값과 같은 리스트만 출력
-    const {id, title, desc, isDone} = todoDetail
+    const dispatch = useDispatch()
+    const paramId = parseInt(param.id)
+    dispatch(getDetailTodo(paramId))
+    const todos = useSelector((state) => state.todos.todoDetail) //todo list 가져오기
+    const {id, title, desc, isDone} = todos
 
     const DetailCard = (props) => {
         return(

@@ -6,7 +6,7 @@ function HeaderComp(){
     return(
         <Header>
             <H1>My Todo List 2023</H1>
-            <H2>React-Redux</H2>
+            <H2>React-Redux && Redux-Persist</H2>
         </Header>
     )
 }
